@@ -1,0 +1,128 @@
+/* GOOGLE FONTS */
+@import 'https://fonts.googleapis.com/css?family=Orbitron';
+
+/* BODY */
+body {
+  background-color: #EEA847;
+  font-family: "Orbitron", arial, serif;
+  margin: 0;
+} 
+
+p {
+  margin: 0;
+}
+
+h3, .footnote {
+  margin: 0;
+  color: #EEA847;
+}
+
+/* CALCULATOR BOX */
+.calculator {
+  background-color: #5C5C5C;
+  width: 450px;
+  margin: 100px auto;
+  height: 500px;
+  border-radius: 10px;
+  box-shadow: 3px 3px 25px 0px black;
+}
+
+/* ADD PADDING DIV CLASS */
+.add-padding {
+  padding-bottom: 20px;
+}
+
+/* TITLE */
+.title {
+  text-align: center;
+  padding-bottom: 15px;
+}
+
+/* INPUT BAR  */
+.input-bar {
+  background-color: #CCDDCD;
+  width: 375px;
+  margin: 0 auto;
+  border: 3px solid #788877;
+  border-radius: 10px;
+  padding-right: 25px;
+  overflow: hidden;
+  margin-bottom: 15px;
+}
+
+#input {
+  float: right;
+  font-size: 2em;
+  padding-top:5px;
+  user-select: none;
+  -moz-user-select: none;
+}
+
+#current-entry {
+  clear: both;
+  float: right;
+  padding-bottom: 5px;
+}
+
+/* BUTTONS */
+.row {
+  width: 375px;
+  margin: auto;
+}
+
+.button {
+  background-color: #EEEEEE;
+  padding: 15px;
+  width: 50px;
+  text-align: center;
+  border-radius: 5px;
+  box-shadow: 0 3px 5px black;
+  float: left;
+  margin: 5px;
+  user-select: none;
+  -moz-user-select: none;
+}
+
+.button {
+  color: black;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.button:active {
+  box-shadow: none;
+}
+
+/* AC AND CE */
+#ac, #ce {
+  background-color: #A72D45;
+  color: white;
+}
+
+/* EQUALS BUTTON */
+#equals {
+  padding: 45px 15px 45px 15px;
+  margin-right: 19px;
+  float: right;
+}
+
+ /* ZERO BUTTON */
+#zero {
+  width: 140px;
+}
+
+/* FOOTER */
+.footnote {
+  clear: both;
+  padding-top: 15px;
+  text-align: center; 
+}
+
+.footnote a, .footnote a:visited{
+  color: #EEA847;
+  text-decoration: none;
+}
+
+
+
+
