@@ -13,6 +13,7 @@ function clearInput(ac){
   
   // clear current input back to empty string
   currentInput = "";
+  currentEntry = "";
   currentInputArr = [];
   
 }
@@ -21,24 +22,22 @@ function clearInput(ac){
 function buttonPress(button) {
   var regex = /[^\S]/g;  
   var currentButton = document.getElementById(button).innerHTML; 
-  
-  // Check if button pressed was a number, if not will return NaN
-  var operatorCheck = parseInt(currentButton);
-  
-  if(operatorCheck === NaN){
-    
-  }
-  
-  console.log(operatorCheck);
-  
-  //gets rid of all whitespace
+   //gets rid of all whitespace
   currentButton = currentButton.replace(regex, "");
+  //ParseInt button press to make sure Button is a number
+  var numCheck = parseInt(currentButton);
   
-  currentInput += (currentButton);
+  if(numCheck === NaN) {
+    currentInputArr.push(currentInput);
+
+  } else {
+    currentInput += (currentButton);
   
-  //Current Input Display
-  document.getElementById("current-entry").innerHTML = currentInput;
-  
+    //Current Input Display
+    document.getElementById("current-entry").innerHTML = currentInput;
+  }
+   
   console.log(currentInput);
+  console.log(currentInputArr);
   
 }
