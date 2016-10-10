@@ -3,7 +3,6 @@
 //String is to hold values and keep numbers together
 var currentInput = "";
 var currentEntry = [];
-var currentInputArr = [];
 
 //AC (Clear) Button Function
 function clearInput(ac){
@@ -15,7 +14,6 @@ function clearInput(ac){
   // clear current input back to empty string
   currentInput = "";
   currentEntry = [];
-  currentInputArr = [];
   
 } // clearInput() bracket end
 
@@ -32,30 +30,64 @@ function buttonPress(button) {
   // When a number is pressed
   if (checkIfOperator === -1) {
     
-    if(operators.indexOf(currentEntry[currentEntry.length -1]) !== -1){
+    if(operators.indexOf(currentEntry[currentEntry.length -1]) !== -1){    
       currentInput = "";
     }
-    
+     
     currentInput += currentButton;
     currentEntry.push(currentButton);
   
     //Current Input Display
     document.getElementById("current-entry").innerHTML = currentEntry.length === 0 ? "0" : currentEntry.join("");
     document.getElementById("input").innerHTML = currentInput;    
-  } else { //when an operator is pressed
-    currentInputArr.push(currentInput);
+  } else { //WHEN AN OPERATOR IS PRESSED:
+      //Do Not Allow 2 operators back to back if statment
+      // OR IF operator is first button hit
+        //return false
+      if(operators.indexOf(currentEntry[currentEntry.length -1]) !== -1 || currentEntry[0] === undefined){    
+      return false;
+      }
     
+    // operator is clears conditionals, clear current input and place operator into the current input
+    //push operator into the currentEntry array
     currentInput = "";
     currentInput += currentButton;
     currentEntry.push(currentButton);
     document.getElementById("input").innerHTML = currentButton;
-    
-    document.getElementById("current-entry").innerHTML = currentEntry.join("");
-    
-  }
+  } // else (above ^) bracket end
    
   console.log(currentInput);
   console.log(currentEntry);
-  console.log(currentInputArr);
   
+} // buttonPress() function bracket end
+
+
+//EQUALS FUNCTION
+  // ce = current entry 
+function equalsFunction(ce) {
+  if(ce[0] === undefined){
+    return false;
+  } 
+  
+  if(ce[ce.length - 1] == 0 && ce[ce.length - 2] == "/"){
+    document.getElementById("input").innerHTML = "Error";
+    currentEntry = [];
+    document.getElementById("current-entry").innerHTML = "0";
+    return false;
+  }
+  
+  //turn currentEntry array into string so it can be put into eval function to be solved
+  ce = ce.join("");
+  
+  //Since I used x for display, replace x with javascript * to multiply
+  ce = ce.replace("x", "*");
+  
+  //store eval result
+  var result = eval(ce);
+  
+  currentInput = result;
+  currentEntry = [result];
+  
+  document.getElementById("input").innerHTML = result;
+  document.getElementById("current-entry").innerHTML = result;
 }
