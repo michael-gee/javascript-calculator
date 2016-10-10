@@ -8,10 +8,9 @@ var currentEntry = [];
 function clearInput(ac){
   
   document.getElementById("input").innerHTML = 0;
-  
   document.getElementById("current-entry").innerHTML = 0;
   
-  // clear current input back to empty string
+  // clear current input back to empty string (reset)
   currentInput = "";
   currentEntry = [];
   
@@ -26,6 +25,11 @@ function buttonPress(button) {
   currentButton = currentButton.replace(regex, "");
   
   var checkIfOperator = operators.indexOf(currentButton);
+  
+    //DO NOT ALLOW TWO PERIODS IN A ROW
+    if(currentEntry[currentEntry.length - 1] == "." && currentButton == "."){
+    return false;
+  }
   
   // When a number is pressed
   if (checkIfOperator === -1) {
@@ -55,12 +59,18 @@ function buttonPress(button) {
     currentEntry.push(currentButton);
     document.getElementById("input").innerHTML = currentButton;
   } // else (above ^) bracket end
-   
-  console.log(currentInput);
-  console.log(currentEntry);
-  
 } // buttonPress() function bracket end
 
+// CLEAR ENTRY FUNCTION
+  // ce = current entry
+function clearEntry(ce){
+  if(ce[0] === undefined){
+    return false;
+  }
+  
+  
+  console.log(ce);
+}
 
 //EQUALS FUNCTION
   // ce = current entry 
@@ -69,8 +79,11 @@ function equalsFunction(ce) {
     return false;
   } 
   
+  // If a number is divided by 0, return error
   if(ce[ce.length - 1] == 0 && ce[ce.length - 2] == "/"){
     document.getElementById("input").innerHTML = "Error";
+    // reset
+    currentInput = "";
     currentEntry = [];
     document.getElementById("current-entry").innerHTML = "0";
     return false;
