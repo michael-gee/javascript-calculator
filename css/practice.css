@@ -35,7 +35,7 @@ h3, .footnote {
 /* TITLE */
 .title {
   text-align: center;
-  padding-bottom: 15px;
+  padding-bottom: 20px;
 }
 
 /* INPUT BAR  */
@@ -48,7 +48,7 @@ h3, .footnote {
   padding-right: 25px;
   padding-top: 5px;
   overflow: hidden;
-  margin-bottom: 15px;
+  margin-bottom: 20px;
 }
 
 #input {
@@ -62,13 +62,14 @@ h3, .footnote {
 #current-entry {
   clear: both;
   float: right;
-  padding-bottom: 5px;
+  padding-bottom: 6px;
 }
 
 /* BUTTONS */
 .row {
   width: 375px;
   margin: auto;
+  padding-left: 15px;
 }
 
 .button {
@@ -82,10 +83,6 @@ h3, .footnote {
   margin: 5px;
   user-select: none;
   -moz-user-select: none;
-}
-
-.button {
-  color: black;
   font-weight: bold;
   cursor: pointer;
 }
@@ -102,7 +99,7 @@ h3, .footnote {
 
 /* EQUALS BUTTON */
 #equals {
-  padding: 45px 15px 45px 15px;
+  padding: 44px 15px 43px 15px;
   margin-right: 19px;
   float: right;
 }
@@ -115,7 +112,7 @@ h3, .footnote {
 /* FOOTER */
 .footnote {
   clear: both;
-  padding-top: 15px;
+  padding-top: 25px;
   text-align: center; 
 }
 
@@ -123,7 +120,3 @@ h3, .footnote {
   color: #EEA847;
   text-decoration: none;
 }
-
-
-
-
