@@ -22,7 +22,7 @@ h3, .footnote {
   background-color: #5C5C5C;
   width: 450px;
   margin: 100px auto;
-  height: 500px;
+  height: 525px;
   border-radius: 10px;
   box-shadow: 3px 3px 25px 0px black;
 }
@@ -112,7 +112,7 @@ h3, .footnote {
 /* FOOTER */
 .footnote {
   clear: both;
-  padding-top: 25px;
+  padding-top: 17px;
   text-align: center; 
 }
 
