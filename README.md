@@ -4,3 +4,5 @@ A project that focuses more on Javascript and giving this application the functi
 Although a decent amount of HTML and CSS were also included in the project.
 
 Github link is here: https://michaelgee22.github.io/javascript-calculator/
+
+CodePen link is here: http://codepen.io/michaelg22/full/dpJjXa/
