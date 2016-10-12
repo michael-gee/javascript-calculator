@@ -63,11 +63,26 @@ function buttonPress(button) {
 
 // CLEAR ENTRY FUNCTION
   // ce = current entry
-function clearEntry(ce){
+function delEntry(ce){
   if(ce[0] === undefined){
     return false;
   }
   
+  // If there's only 1 number left, call the clear input function
+  if(ce.length === 1){
+    clearInput();
+    //else - delete characters one at a time
+  } else if(ce.length > 1){
+    
+    ce.pop();
+    currentInput = currentInput.split("");
+    currentInput.pop();
+    currentInput = currentInput.join("");
+    
+  document.getElementById("input").innerHTML = currentInput;
+  document.getElementById("current-entry").innerHTML = ce.join("");
+    
+  }
   
   console.log(ce);
 }
