@@ -79,6 +79,10 @@ function delEntry(ce){
     currentInput.pop();
     currentInput = currentInput.join("");
     
+    if(currentInput.length === 0 ){
+      currentInput = ce.join("");
+    }
+    
   document.getElementById("input").innerHTML = currentInput;
   document.getElementById("current-entry").innerHTML = ce.join("");
     
