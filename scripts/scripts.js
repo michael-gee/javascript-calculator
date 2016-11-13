@@ -4,6 +4,8 @@
 var currentInput = "";
 var currentEntry = [];
 
+var calc = (function moduleF(){
+
 //AC (Clear) Button Function
 function clearInput(ac){
   
@@ -18,7 +20,8 @@ function clearInput(ac){
 
 // Number Button Function
 function buttonPress(button) {
-  var operators = ["x", "+", "-", "/"]
+  var operators = ["x", "+", "-", "/"];
+  var counter = 0;
   var regex = /[^\S]/g;  
   var currentButton = document.getElementById(button).innerHTML; 
    //gets rid of all whitespace
@@ -61,6 +64,7 @@ function buttonPress(button) {
   } // else (above ^) bracket end
 } // buttonPress() function bracket end
 
+
 // CLEAR ENTRY FUNCTION
   // ce = current entry
 function delEntry(ce){
@@ -87,8 +91,6 @@ function delEntry(ce){
   document.getElementById("current-entry").innerHTML = ce.join("");
     
   }
-  
-  console.log(ce);
 }
 
 //EQUALS FUNCTION
@@ -123,3 +125,13 @@ function equalsFunction(ce) {
   document.getElementById("input").innerHTML = result;
   document.getElementById("current-entry").innerHTML = result;
 }
+  
+return {
+  clearInput: clearInput,
+  delEntry: delEntry,
+  buttonPress: buttonPress,
+  equalsFunction: equalsFunction
+}
+  
+  
+})();
