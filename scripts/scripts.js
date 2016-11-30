@@ -30,7 +30,11 @@ function buttonPress(button) {
   var checkIfOperator = operators.indexOf(currentButton);
   
     //DO NOT ALLOW TWO PERIODS IN A ROW
-    if(currentEntry[currentEntry.length - 1] == "." && currentButton == "."){
+  if(currentButton == "." && checkForTwoDecimals()){
+    return false;
+  }
+  
+  if(currentEntry[currentEntry.length - 1] == "." && currentButton == "."){
     return false;
   }
   
@@ -62,6 +66,7 @@ function buttonPress(button) {
     currentEntry.push(currentButton);
     document.getElementById("input").innerHTML = currentButton;
   } // else (above ^) bracket end
+  console.log(currentInput);
 } // buttonPress() function bracket end
 
 
@@ -125,6 +130,18 @@ function equalsFunction(ce) {
   document.getElementById("input").innerHTML = result;
   document.getElementById("current-entry").innerHTML = result;
 }
+  
+  // Function that Does not allow for more than 2 decimals in the same number
+  function checkForTwoDecimals(){
+    var regex = /[.]{1}/g;
+    
+    if(currentInput.search(regex) > -1) {
+      return true;
+    } else {
+      return false;
+    }
+    
+  }
   
 return {
   clearInput: clearInput,
