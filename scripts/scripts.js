@@ -59,6 +59,11 @@ function buttonPress(button) {
       return false;
       }
     
+      // If a decimal is the last entry when operator is clicked, remove the decimal
+      if(currentEntry[currentEntry.length - 1] == "."){
+        delEntry(currentEntry);
+      }
+    
     // operator is clears conditionals, clear current input and place operator into the current input
     //push operator into the currentEntry array
     currentInput = "";
