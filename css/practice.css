@@ -22,7 +22,7 @@ h3, .footnote {
 /* CALCULATOR BOX */
 .calculator {
   background-color: #5C5C5C;
-  width: 450px;
+  max-width: 450px;
   margin: 0 auto;
   height: 525px;
   border-radius: 10px;
@@ -43,7 +43,7 @@ h3, .footnote {
 /* INPUT BAR  */
 .input-bar {
   background-color: #CCDDCD;
-  width: 375px;
+  max-width: 375px;
   margin: 0 auto;
   border: 3px solid #788877;
   border-radius: 10px;
@@ -69,7 +69,7 @@ h3, .footnote {
 
 /* BUTTONS */
 .row {
-  width: 375px;
+  max-width: 375px;
   margin: auto;
   padding-left: 15px;
 }
