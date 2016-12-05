@@ -69,7 +69,7 @@ h3, .footnote {
 
 /* BUTTONS */
 .row {
-  max-width: 375px;
+  width: 375px;
   margin: auto;
   padding-left: 15px;
 }
@@ -110,7 +110,7 @@ h3, .footnote {
 
  /* ZERO BUTTON */
 #zero {
-  width: 140px;
+  width: 135px;
 }
 
 /* FOOTER */
@@ -123,4 +123,16 @@ h3, .footnote {
 .footnote a, .footnote a:visited{
   color: #EEA847;
   text-decoration: none;
+}
+
+/* MEDIA QUERIES */
+@media screen and (max-width: 400px){
+  .button {
+    margin: 3px;
+  }
+  
+  #equals {
+    margin-right: 32px;
+    padding: 45px 15px 45px 15px;
+  }
 }
